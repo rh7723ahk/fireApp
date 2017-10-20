@@ -17,21 +17,44 @@
 	   <div class="container">
         <h1 class="display">Wild Fire Checker</h1>
         
-        <p>TContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+        <p>Welcome! This website was created to ensure the safety of all during a fire crisis in your area. </p>
+        <br>
+      <p>Instruction: To use our website simply enter a zip code in the search bar below and you will be able to see all fires in the area on Google Maps. Either click your mouse over the affected area on Google Maps or select one of the fires under “Fires in the Area” section. By selecting one the map Google Map UI will atomically the effected area and will proceed to provide you with all of the information you need to know. </p>
       </div>
     </div>
 
 <img src="assets/images/fire.jpg">
 <hr />
-
 <h2 class="Search">Search A Fire In Your Area</h2>
 <br>
 <input id= "searchbar1" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">      
  <br>
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+<hr /><div class = "Information Section">
+  <div class = "container">
+  <h3 class = "display2"> Information on Current Fire In Your Area</h3>
 
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
-
+<div class = "google-map-placeholder">
+<img src="https://www.gecn.org/wp-content/uploads/2012/10/google-map-placeholder.jpg" alt="google map " width="600" height="300">
+<hr/>
+<section class="panel panel-primary">
+      <div class="panel-heading">
+        Fires in the Area
+<table class="table table-hover">
+          <thead>
+            <tr>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="display-article">
+            <!-- <tr>
+              <td></td>
+              <td></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </section>
  <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 

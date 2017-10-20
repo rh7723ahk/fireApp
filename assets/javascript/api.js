@@ -7,5 +7,5 @@ $.ajax({
 }).done(function(result) {
 	console.log(result.response);
 	// create var for all things we want represented from json dump
-	var
+
 });

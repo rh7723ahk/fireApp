@@ -1,5 +1,4 @@
-$("#findFire").on("click", function(event){
-	event.preventDefault();
+function fireApi(){
 
 	var place = $("#userInput").val().trim();
 
@@ -27,5 +26,5 @@ $("#findFire").on("click", function(event){
 		}
 	// create var for all things we want represented from json dump
 	});
-})
+}
 

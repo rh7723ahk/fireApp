@@ -10,3 +10,11 @@ var config = {
   
   firebase.initializeApp(config);
   //Initialize Firebase=====================================
+
+
+  $("#findFire").on("click", function(event){
+  	event.preventDefault();
+
+  	fireApi();
+
+  });

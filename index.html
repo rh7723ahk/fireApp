@@ -22,20 +22,19 @@
       <p>Instruction: To use our website simply enter a zip code in the search bar below and you will be able to see all fires in the area on Google Maps. Either click your mouse over the affected area on Google Maps or select one of the fires under “Fires in the Area” section. By selecting one the map Google Map UI will atomically the effected area and will proceed to provide you with all of the information you need to know. </p>
       </div>
     </div>
+<div class = "google-map-placeholder">
+<img src="https://www.gecn.org/wp-content/uploads/2012/10/google-map-placeholder.jpg" alt="google map " width="600" height="300">
 
-<img src="assets/images/fire.jpg">
 <hr />
 <h2 class="Search">Search A Fire In Your Area</h2>
 <br>
-<input id= "searchbar1" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">      
+<input id= "userInput" class="form-control mr-sm-2" type="text" placeholder="Search Zip Code" aria-label="Search">      
  <br>
 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 <hr /><div class = "Information Section">
   <div class = "container">
   <h3 class = "display2"> Information on Current Fire In Your Area</h3>
 
-<div class = "google-map-placeholder">
-<img src="https://www.gecn.org/wp-content/uploads/2012/10/google-map-placeholder.jpg" alt="google map " width="600" height="300">
 <hr/>
 <section class="panel panel-primary">
       <div class="panel-heading">
@@ -56,11 +55,16 @@
       </div>
     </section>
  <script type="text/javascript" src="assets/javascript/app.js"></script>
+  
+
+
+ <script type="text/javascript" src="assets/javascript/googleMapApi.js"></script>
+
 
 
   <!-- Jquery link -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- API link -->
-<script src="assets/javascript/api.js"></script>
+<script src="assets/javascript/fireApi.js"></script>
 
  </body>

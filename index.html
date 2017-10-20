@@ -3,91 +3,94 @@
 <head>
 	<meta charset = "UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title> Fire Application  </title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+<!-- Jquery link -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+
+
 </head>
 
+
 <body>
-</div>
-	<div class="Intro">
-	   <div class="container">
+  
+  <div class="container">
+    
+    <div class="Intro">
         <h1 class="display">Wild Fire Checker</h1>
         
         <p>Welcome! This website was created to ensure the safety of all during a fire crisis in your area. </p>
-        <br>
-      <p>Instruction: To use our website simply enter a zip code in the search bar below and you will be able to see all fires in the area on Google Maps. Either click your mouse over the affected area on Google Maps or select one of the fires under “Fires in the Area” section. By selecting one the map Google Map UI will atomically the effected area and will proceed to provide you with all of the information you need to know. </p>
-      </div>
-      <div>          
-            <p id="nameTag"></p>
-            
-        </div>
+        
+        <p>Instruction: To use our website simply enter a zip code in the search bar below and you will be able to see all fires in the area on Google Maps. Either click your mouse over the affected area on Google Maps or select one of the fires under “Fires in the Area” section. By selecting one the map Google Map UI will atomically the effected area and will proceed to provide you with all of the information you need to know. </p>
     </div>
-    <img src="assets/images/fire.jpg">
-<div class = "google-map-placeholder">
-<img src="https://www.gecn.org/wp-content/uploads/2012/10/google-map-placeholder.jpg" alt="google map " width="600" height="300">
+    
+    <div id="imageDiv">
+      <img src="assets/images/fire.jpg">
+    </div>  
+    
 
-<hr />
-<h2 class="Search">Search A Fire In Your Area</h2>
-<br>
-<input id= "userInput" class="form-control mr-sm-2" type="text" placeholder="Search Zip Code" aria-label="Search">     
- <br>
-<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-<hr /><div class = "Information Section">
-  <div class = "container">
-  <h3 class = "display2"> Information on Current Fire In Your Area</h3>
+    <div class="searchSection">
 
-<hr/>
-<section class="panel panel-primary">
-      <div class="panel-heading">
-        Fires in the Area
-<table class="table table-hover">
-          <thead>
-            <tr>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="display-article">
-            <!-- <tr>
-              <td></td>
-              <td></td>
-            </tr> -->
-          </tbody>
-        </table>
-      </div>
-    </section>
- <script type="text/javascript" src="assets/javascript/app.js"></script>
+      <h2 class="Search">Search A Fire In Your Area</h2>
+
+      <form>
+        <input id= "userInput" class="form-control mr-sm-2" type="text" placeholder="Search Zip Code" aria-label="Search">  
+
+        <button class="btn btn-outline-success my-2 my-sm-0" id="findFire" type="submit">
+          Search
+        </button>
+      </form>
+
+    </div>
 
 
 
 
-<!-- This code initializes firebase =========================-->
-<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBWu3-eZXIiXEsalI1MrYLha2IwBvWpw4I",
-    authDomain: "fireapp-1508430756843.firebaseapp.com",
-    databaseURL: "https://fireapp-1508430756843.firebaseio.com",
-    projectId: "fireapp-1508430756843",
-    storageBucket: "fireapp-1508430756843.appspot.com",
-    messagingSenderId: "78846809015"
-  };
-  firebase.initializeApp(config);
-</script>
-<!-- Initialize firebase==================================== -->
+   
+
+
+
+      <!-- <div class = "Information Section">
+        
+        <h3 class = "display2">Information on Current Fire In Your Area</h3>
+
+        <section class="panel panel-primary">
+            <div class="panel-heading">
+              Fires in the Area
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="display-article">
+                  
+                </tbody>
+              </table>
+            </div>
+        </section>
+      </div> -->
+       
+
+
+  </div>
+  <!-- container======================================== -->
+
 
  
- <script type="text/javascript" src="assets/javascript/googleMapApi.js"></script>
 
+ 
+  <!-- API link -->
+  <script src="assets/javascript/fireApi.js"></script>
 
+  <script src="assets/javascript/googleMapApi.js"></script>
 
-  <!-- Jquery link -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- API link -->
-<script src="assets/javascript/fireApi.js"></script>
-
- </body>
+</body>

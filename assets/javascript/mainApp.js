@@ -11,10 +11,21 @@ var config = {
   firebase.initializeApp(config);
   //Initialize Firebase=====================================
 
+  var nearbyFiresArray = [];
+  
+  var userInputLocation = {
+  	lat: 0,
+  	lng: 0
+  };
+
+
 
   $("#findFire").on("click", function(event){
   	event.preventDefault();
 
-  	fireApi();
+  	var place = $("#userInput").val().trim();
+  	
+  	fireApi(place);
+
 
   });

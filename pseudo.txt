@@ -2,6 +2,7 @@
 	-waits for the submit button to be clicked
 	-calls fireApi
 	-calls googleMapApi
+	-firebase is functional
 
 -fireApi()
 	-will receive input coordinates

@@ -43,9 +43,3 @@ $("#findFire").on("click", function(event){
     // clears the search field
     $("#userInput").val("");
   });
-
-  
-
-
-
-  

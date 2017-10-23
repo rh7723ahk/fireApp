@@ -1,31 +1,51 @@
 //Initialize Firebase
-var config = {
-    apiKey: "AIzaSyBWu3-eZXIiXEsalI1MrYLha2IwBvWpw4I",
-    authDomain: "fireapp-1508430756843.firebaseapp.com",
-    databaseURL: "https://fireapp-1508430756843.firebaseio.com",
-    projectId: "fireapp-1508430756843",
-    storageBucket: "fireapp-1508430756843.appspot.com",
-    messagingSenderId: "78846809015"
+// kyles firebase key.
+  var config = {
+    apiKey: "AIzaSyB6TuSuV_VHAaujH6Ky3gzDrPqw8n0XTZQ",
+    authDomain: "group-project-7edd9.firebaseapp.com",
+    databaseURL: "https://group-project-7edd9.firebaseio.com",
+    projectId: "group-project-7edd9",
+    storageBucket: "",
+    messagingSenderId: "636060649795"
   };
-  
   firebase.initializeApp(config);
+
+  var database = firebase.database();
   //Initialize Firebase=====================================
 
-  var nearbyFiresArray = [];
+//function form fireApp.js
+var nearbyFiresArray = [];
   
   var userInputLocation = {
-  	lat: 0,
-  	lng: 0
+    lat: 0,
+    lng: 0
   };
 
+// prevents refresh of page
+$("#findFire").on("click", function(event){
+    event.preventDefault();
 
+    // grabs user input
+    var place = $("#userInput").val().trim();
 
-  $("#findFire").on("click", function(event){
-  	event.preventDefault();
+    // creates local "temporary" object for holding fire data
+    var newFire ={
+      fire: place
+    };
 
-  	var place = $("#userInput").val().trim();
-  	
-  	fireApi(place);
+    //uploads fire zip/city to the database
+    database.ref().push(newFire);
 
+    //logs fire to console
+    console.log(newFire.fire);
 
+    fireApi(place);
+    // clears the search field
+    $("#userInput").val("");
   });
+
+  
+
+
+
+  

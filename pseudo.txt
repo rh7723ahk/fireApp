@@ -1,0 +1,14 @@
+-mainApp
+	-waits for the submit button to be clicked
+	-calls fireApi
+	-calls googleMapApi
+
+-fireApi()
+	-will receive input coordinates
+	-outputs coordinates and information of 10 nearest fires in a 50 mile radius
+	-the outputs will be stored in an array
+
+-googleMapApi()
+	-generates a map centered at the input location
+	-grabs the coordinates of the nearest fires from an array
+	-places markers at those locations on the map

@@ -43,23 +43,12 @@
     </div>
     <hr/>
       <!-- Search Section -->
-    <div class="searchSection">
-
-      <h2 class="Search"><strong>Search A Fire In Your Area</strong></h2>
-
-      <form>
-        <input id= "userInput" class="form-control mr-sm-2" type="text" placeholder="Search Zip Code" aria-label="Search">  
-
-        <button class="btn btn-outline-success my-2 my-sm-0" id="findFire" type="submit">
-          Search
-        </button>
-      </form>
-   <hr/>
+    
 
       <!-- Comment Section  -->
             <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title"><strong>Current User's Comments</strong></h3>
+              <h2 class="panel-title"><strong>Current User's Comments</strong></h2>
             </div>
               <p>Below are user's comments on fires nation wide! To add to the comment section merely type in your comment in the text box below. When done click on the submit button below. </p>
             <div class="panel-body">
@@ -76,16 +65,21 @@
           </div>
     </div>
       <!-- Entry Form -->
-           <form>
-                <div class="form-group">
-                  <label for="user-input">Your comment</label>
-                  <input class="form-control" id="userinput" type="text">
-                </div>
-                  <button class="btn btn-outline-success my-2 my-sm-0" id="Submit-userinput" type="submit">
-          Submit
-        </button>
-            </form>
-   
+<h3 class="Search"><strong>Search A Fire In Your Area</strong></h3>      
+  <div class="searchSection">
+    <form>
+      <div class="form-group">
+        <label for="Search-zip">Search A Zip Code</label>
+          <input class="form-control mr-sm-2" id= "userInput" aria-label="Search" type="text"> 
+      </div>
+
+      <div class="form-group">
+        <label for="user-input">Your comment</label>
+          <input class="form-control mr-sm-2" id= "user-input-comment" aria-label="Search" type="text"> 
+      </div>
+            <button class="inputButton btn btn-outline-success my-2 my-sm-0" id="submitInput" type="submit">Submit</button>
+    </form>
+  </div>
 
       <!-- <div class = "Information Section">
         
@@ -107,13 +101,9 @@
         </section>
       </div> -->
        
-
-
-  </div>
-  <!-- container======================================== -->
-
-
- 
+           <!--<button class="btn btn-outline-success my-2 my-sm-0" id="findFire" type="submit">
+          Search
+        </button> -->
 
  
   <!-- API link -->

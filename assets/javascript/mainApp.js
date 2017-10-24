@@ -22,7 +22,7 @@ var nearbyFiresArray = [];
   };
 
 // prevents refresh of page
-$("#findFire").on("click", function(event){
+$(".inputButton").on("click", function(event){
     event.preventDefault();
 
     // grabs user input

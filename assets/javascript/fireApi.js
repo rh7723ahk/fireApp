@@ -21,17 +21,21 @@ function fireApi(inputLocation){
 		console.log(result);
 		// console.log("error code: " + result.error.code);
 		
+		//if any errors
 		if(result.error) {
+			//if success, but no fires found
 			if(result.success == true){
 				console.log("first condition fired");
 				document.getElementById("searchAFire").innerHTML = "No Fires Nearby";
 			}
+			//if invalid input
 			else if (result.success == false){
 				console.log("second condition fired");
 				document.getElementById("searchAFire").innerHTML = "Invalid Input";
 			}
 		}
 		
+		//if successful and fires found
 		else if (result.success == true){
 			console.log("third condition fired");
 

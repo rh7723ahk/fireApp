@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<meta charset = "UTF-8">
+  <meta charset = "UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title> Fire Application  </title>
+  <title> Fire Application  </title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
@@ -29,18 +29,19 @@
     <div id="map">
 
       <div class="Intro">
-          <h1 class="display">Wild Fire Checker</h1>
+          <h1 class="display"><strong>Wild Fire Checker</strong></h1>
           
           <p>Welcome! This website was created to ensure the safety of all during a fire crisis in your area. </p>
           
           <p>Instruction: To use our website simply enter a zip code in the search bar below and you will be able to see all fires in the area on Google Maps. Either click your mouse over the affected area on Google Maps or select one of the fires under “Fires in the Area” section. By selecting one the map Google Map UI will atomically the effected area and will proceed to provide you with all of the information you need to know. </p>
       </div>
-      
+
       <div id="imageDiv">
         <img src="assets/images/fire.jpg">
       </div>  
 
     </div>
+
 
 
       <h2 id="searchAFire" class="Search">Search A Fire In Your Area</h2>
@@ -60,13 +61,18 @@
   </div>
       </form>
 
-    </div>
+      <div class="form-group">
+        <label for="user-input">Your comment</label>
+          <input class="form-control mr-sm-2" id= "user-input-comment" aria-label="Search" type="text"> 
+      </div>
+            <button class="inputButton btn btn-outline-success my-2 my-sm-0" id="submitInput" type="submit">Submit</button>
+    </form>
+  </div>
 
 
       <!-- <div class = "Information Section">
         
         <h3 class = "display2">Information on Current Fire In Your Area</h3>
-
         <section class="panel panel-primary">
             <div class="panel-heading">
               Fires in the Area
@@ -84,13 +90,9 @@
         </section>
       </div> -->
        
-
-
-  </div>
-  <!-- container======================================== -->
-
-
- 
+           <!--<button class="btn btn-outline-success my-2 my-sm-0" id="findFire" type="submit">
+          Search
+        </button> -->
 
  
   <!-- API link -->
@@ -103,3 +105,4 @@
   <script src="assets/javascript/mainApp.js"></script>
 
 </body>
+</html>

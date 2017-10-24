@@ -43,15 +43,24 @@ var stateAbbrev = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CA', 'CT', 'DE', 'FL', '
   if(isNaN(userPlace)) {
     var place = userPlace.toLowerCase().replace(/ /g, "+") + "," + userState.toLowerCase();
     console.log(place);
-    alert("its not a number")
+    //alert("its not a number")
   }
   //if user input is a number
   else
   {
     var place = userPlace;
     console.log(place);
-    alert("its a number")
+    //alert("its a number")
   }
+
+
+      //   if(result.success = true && result.response === []){
+      //   alert("No Fires!")
+      // }
+      // else if (result.success = false){
+      //   alert("invald input!")
+      // }
+      // else{
 
 
   	

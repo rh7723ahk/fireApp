@@ -13,7 +13,7 @@
   var database = firebase.database();
   //Initialize Firebase=====================================
 
-//function form fireApp.js
+//function form fireApi.js
 var nearbyFiresArray = [];
   
   var userInputLocation = {
@@ -22,24 +22,67 @@ var nearbyFiresArray = [];
   };
 
 // prevents refresh of page
-$(".inputButton").on("click", function(event){
+
+$(".userInput").on("click", function(event) {
     event.preventDefault();
 
-    // grabs user input
-    var place = $("#userInput").val().trim();
+  // body...
 
+
+
+    // grabs user input
+    var place = $("#searchInput").val().trim();
+    var comm = $("#commInput").val().trim();
     // creates local "temporary" object for holding fire data
     var newFire ={
-      fire: place
+      fire: place,
+      comment: comm
     };
+    
 
     //uploads fire zip/city to the database
     database.ref().push(newFire);
-
+    
     //logs fire to console
     console.log(newFire.fire);
-
+  
     fireApi(place);
     // clears the search field
-    $("#userInput").val("");
+    $("#searchInput").val("");
+    $("#commInput").val("");
   });
+
+// create firebase event for adding comments to database and a row in the html
+database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+
+  console.log(childSnapshot.val());
+
+  // Store everything into a variable.
+  var newFire = childSnapshot.val().fire;
+  var newFire = childSnapshot.val().comment;
+  
+
+  // Employee Info
+  console.log(newFire);
+
+  // Add each train's data into the table
+  $("#comments > tbody").append("<tr><td>" + newFire + "</td></tr>");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

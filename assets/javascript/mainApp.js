@@ -13,7 +13,7 @@
   var database = firebase.database();
   //Initialize Firebase=====================================
 
-//function form fireApp.js
+//function form fireApi.js
 var nearbyFiresArray = [];
   
   var userInputLocation = {
@@ -22,24 +22,31 @@ var nearbyFiresArray = [];
   };
 
 // prevents refresh of page
-$("#findFire").on("click", function(event){
+$(".userInput").on("click", function(event) {
     event.preventDefault();
 
-    // grabs user input
-    var place = $("#userInput").val().trim();
+  // body...
 
+
+
+    // grabs user input
+    var place = $("#searchInput").val().trim();
+    var comm = $("#commInput").val().trim();
     // creates local "temporary" object for holding fire data
     var newFire ={
-      fire: place
+      fire: place,
+      comment: comm
     };
 
     //uploads fire zip/city to the database
     database.ref().push(newFire);
 
     //logs fire to console
-    console.log(newFire.fire);
+    console.log(newFire.fire.comment);
 
     fireApi(place);
     // clears the search field
-    $("#userInput").val("");
+    $("#searchInput").val("");
+    $("#commInput").val("");
   });
+

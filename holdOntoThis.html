@@ -1,0 +1,65 @@
+<div class="container">
+
+    <div id="map">
+
+      <div class="Intro">
+          <h1 class="display"><strong>Wild Fire Checker</strong></h1>
+          
+          <p>Welcome! This website was created to ensure the safety of all during a fire crisis in your area. </p>
+          
+          <p>Instruction: To use our website simply enter a zip code in the search bar below and you will be able to see all fires in the area on Google Maps. Either click your mouse over the affected area on Google Maps or select one of the fires under “Fires in the Area” section. By selecting one the map Google Map UI will atomically the effected area and will proceed to provide you with all of the information you need to know. </p>
+      </div>
+
+      <div id="imageDiv">
+        <img src="assets/images/fire.jpg">
+      </div>  
+
+    </div>
+    <hr/>
+      <!-- Search Section -->
+    <div class="searchSection">
+
+      <h2 class="Search"><strong>Search A Fire In Your Area</strong></h2>
+
+      <form>
+        <input id= "searchInput" class="form-control mr-sm-2" type="text" placeholder="Search Zip Code" aria-label="Search">  
+
+        <button class="userInput btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+   <hr/>
+
+      <!-- Comment Section  -->
+            <div class="panel panel-primary">
+
+            <div class="panel-heading">
+
+              <h3 class="panel-title"><strong>Current User's Comments</strong></h3>
+            </div>
+              <p>Below are user's comments on fires nation wide! To add to the comment section merely type in your comment in the text box below. When done click on the submit button below. </p>
+            <div class="panel-body">
+              <table class="table table-hover" id='comment-table'>
+                <thead>
+                  <tr>
+                    <th>Comments:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+      <!-- Entry Form -->
+           <form>
+                <div class="form-group">
+                  
+                  <input class="form-control" id="commInput" type="text" placeholder="Comment Here" aria-label="comment">
+                </div>
+                  <button class="userInput btn btn-outline-success my-2 my-sm-0" type="submit">
+          Submit
+        </button>
+            </form>
+       
+  </div>

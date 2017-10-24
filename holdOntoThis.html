@@ -1,3 +1,4 @@
+<!-- pretty much trash -->
 <div class="container">
 
     <div id="map">
@@ -63,3 +64,163 @@
             </form>
        
   </div>
+
+<!-- version to edit with deva master -->
+mainApp.js
+//Initialize Firebase
+// kyles firebase key.
+  var config = {
+    apiKey: "AIzaSyB6TuSuV_VHAaujH6Ky3gzDrPqw8n0XTZQ",
+    authDomain: "group-project-7edd9.firebaseapp.com",
+    databaseURL: "https://group-project-7edd9.firebaseio.com",
+    projectId: "group-project-7edd9",
+    storageBucket: "",
+    messagingSenderId: "636060649795"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+  //Initialize Firebase=====================================
+
+//function form fireApi.js
+var nearbyFiresArray = [];
+  
+  var userInputLocation = {
+    lat: 0,
+    lng: 0
+  };
+
+// prevents refresh of page
+$(".userInput").on("click", function(event) {
+    event.preventDefault();
+
+  // body...
+
+
+
+    // grabs user input
+    var place = $("#searchInput").val().trim();
+    var comm = $("#commInput").val().trim();
+    // creates local "temporary" object for holding fire data
+    var newFire ={
+      fire: place,
+      comment: comm
+    };
+
+    //uploads fire zip/city to the database
+    database.ref().push(newFire);
+
+    //logs fire to console
+    console.log(newFire.fire.comment);
+
+    fireApi(place);
+    // clears the search field
+    $("#searchInput").val("");
+    $("#commInput").val("");
+  });
+
+<!-- html styled off of timeSheet classwork -->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset = "UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title> Fire Application  </title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+<!-- Jquery link -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <div id="map">
+
+      <div class="Intro">
+          <h1 class="display"><strong>Wild Fire Checker</strong></h1>
+          
+          <p>Welcome! This website was created to ensure the safety of all during a fire crisis in your area. </p>
+          
+          <p>Instruction: To use our website simply enter a zip code in the search bar below and you will be able to see all fires in the area on Google Maps. Either click your mouse over the affected area on Google Maps or select one of the fires under “Fires in the Area” section. By selecting one the map Google Map UI will atomically the effected area and will proceed to provide you with all of the information you need to know. </p>
+      </div>
+
+      <div id="imageDiv">
+        <img src="assets/images/fire.jpg">
+      </div>  
+
+    </div>
+    <hr/>
+    
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Search</strong></h3>
+          </div>
+          <div class="panel-body">
+              <table class="table table-hover" id="comments">
+                <thead>
+                  <tr>
+                    <th>Comments</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+          </div>
+        </div>
+
+        <!-- Add comments -->
+        <div class="panel panel-primary">
+          <div class ="panel-heading">
+            <h3 class ="panel-title"><strong>Add Comment</strong></h3>
+          </div>
+          <div class="panel-body">
+            <form>
+                <div class="form-group">
+                  <label for="employee-name-input">Search</label>
+                  <input class="form-control" id="searchInput" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="role-input">Comment</label>
+                  <input class="form-control" id="commInput" type="text">
+                </div>
+                <button class="userInput btn btn-primary" id="add-fire-btn" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  
+  
+  <!-- container======================================== -->
+
+
+ 
+
+ 
+  <!-- API link -->
+  <script src="assets/javascript/fireApi.js"></script>
+
+  <script async defer 
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD85bBHJ4z4CSsbxQC4KJ93MNSeiI1sfHA"></script> 
+  <script src="assets/javascript/googleMapApi.js"></script>
+
+  <script src="assets/javascript/mainApp.js"></script>
+
+</body>
+</html>

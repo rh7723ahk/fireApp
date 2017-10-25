@@ -60,7 +60,6 @@ var stateAbbrev = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CA', 'CT', 'DE', 'FL', '
  	
 
   // body...
-
     // grabs user input
     var comm = $("#commInput").val().trim();
     // creates local "temporary" object for holding fire data
@@ -88,15 +87,20 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log(childSnapshot.val());
 
   // Store everything into a variable.
-  var newFire = childSnapshot.val().fire;
+  // var newFire = childSnapshot.val().fire;
+  // console.log("newfire before comment: " + newFire);
   var newFire = childSnapshot.val().comment;
+  console.log("new fire: " + newFire);
   
 
   // Employee Info
   console.log(newFire);
 
+if(newFire !== ""){
   // Add each train's data into the table
   $("#comments > tbody").append("<tr><td>" + newFire + "</td></tr>");
+}
+
 });
 
 

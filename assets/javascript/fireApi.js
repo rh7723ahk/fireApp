@@ -29,16 +29,17 @@ function fireApi(inputLocation){
 				console.log("first condition fired");
 				document.getElementById("searchAFire").innerHTML = "No Fires Nearby";
 			}
-			//if invalid input
+			//if invalid input/location
 			else if (result.success == false){
 				console.log("second condition fired");
-				document.getElementById("searchAFire").innerHTML = "Invalid Input";
+				document.getElementById("searchAFire").innerHTML = "Invalid Location";
 			}
 		}
 		
 		//if successful and fires found
 		else if (result.success == true){
 			console.log("third condition fired");
+			document.getElementById("searchAFire").innerHTML = "Fires Found";
 
 			for(var i = 0; i < result.response.length; i++){
 

@@ -17,6 +17,7 @@ function fireApi(inputLocation){
 	url: queryURL,
 	method: "GET"
 	}).done(function(result) {
+		
 		console.log("success: " + result.success);
 		console.log(result);
 		// console.log("error code: " + result.error.code);
@@ -65,7 +66,7 @@ function fireApi(inputLocation){
 			// console.log("relative longitude: " + result.response[i].relativeTo.long + "<br>");
 			
 		}
-		console.log("testing");
+		// console.log("testing");
 	}
 
 		googleMapApi(userInputLocation, nearbyFiresArray);

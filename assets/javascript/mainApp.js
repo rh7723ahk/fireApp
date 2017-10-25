@@ -13,7 +13,7 @@
   var database = firebase.database();
   //Initialize Firebase=====================================
 
-//function form fireApp.js
+//function form fireApi.js
 var nearbyFiresArray = [];
   
   var userInputLocation = {
@@ -36,11 +36,11 @@ var stateAbbrev = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CA', 'CT', 'DE', 'FL', '
 }
 
 //On search button click
-  $("#findFire").on("click", function(event){
+  $("#add-fire-btn").on("click", function(event){
   	event.preventDefault();
 
   //set variable for place(city/zip) and state
-    var userPlace = $("#userInput").val().trim();
+    var userPlace = $("#searchInput").val().trim();
     var userState = $("#selectState").val().trim();
 
   //if user input is not a number
@@ -53,44 +53,50 @@ var stateAbbrev = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CA', 'CT', 'DE', 'FL', '
   else
   {
     var urlPlace = userPlace;
-    console.log(place);
+    console.log(urlPlace);
     //alert("its a number")
   }
 
+ 	
 
-      //   if(result.success = true && result.response === []){
-      //   alert("No Fires!")
-      // }
-      // else if (result.success = false){
-      //   alert("invald input!")
-      // }
-      // else{
-
-
-  	
-  	fireApi(urlPlace);
-// prevents refresh of page
-$(".inputButton").on("click", function(event){
-    event.preventDefault();
+  // body...
 
     // grabs user input
-    var place = $("#userInput").val().trim();
-
+    var comm = $("#commInput").val().trim();
     // creates local "temporary" object for holding fire data
     var newFire ={
-      fire: place
+      fire: urlPlace,
+      comment: comm
     };
+    
 
     //uploads fire zip/city to the database
     database.ref().push(newFire);
-
-
+    
     //logs fire to console
     console.log(newFire.fire);
-
-
-    fireApi(place);
+  
+    fireApi(urlPlace);
     // clears the search field
-    $("#userInput").val("");
+    $("#searchInput").val("");
+    $("#commInput").val("");
   });
+
+// create firebase event for adding comments to database and a row in the html
+database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+
+  console.log(childSnapshot.val());
+
+  // Store everything into a variable.
+  var newFire = childSnapshot.val().fire;
+  var newFire = childSnapshot.val().comment;
+  
+
+  // Employee Info
+  console.log(newFire);
+
+  // Add each train's data into the table
+  $("#comments > tbody").append("<tr><td>" + newFire + "</td></tr>");
 });
+
+

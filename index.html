@@ -22,9 +22,7 @@
 
 <body>
 
-
-  
-  <div class="container">
+<div class="container">
 
     <div id="map">
 
@@ -42,59 +40,63 @@
 
     </div>
 
-
-
-      <h2 id="searchAFire" class="Search">Search A Fire In Your Area</h2>
-
-      <form>
-        <input id= "userInput" class="form-control mr-sm-2" type="text" placeholder="Search Zip Code" aria-label="Search">  
-
-        <button class="btn btn-outline-success my-2 my-sm-0" id="findFire" type="submit">
-          Search
-        </button>
 		
-	<form id="myForm">
+<!-- 	<form id="myForm">
   		<select id="selectState">
     	<option>Choose a state</option>
   		</select>
-	</form>
-  </div>
-      </form>
+	</form> -->
+    
+    
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-primary">
+          <div class="panel-body">
+              <table class="table table-hover" id="comments">
 
-      <div class="form-group">
-        <label for="user-input">Your comment</label>
-          <input class="form-control mr-sm-2" id= "user-input-comment" aria-label="Search" type="text"> 
-      </div>
-            <button class="inputButton btn btn-outline-success my-2 my-sm-0" id="submitInput" type="submit">Submit</button>
-    </form>
-  </div>
-
-
-      <!-- <div class = "Information Section">
-        
-        <h3 class = "display2">Information on Current Fire In Your Area</h3>
-        <section class="panel panel-primary">
-            <div class="panel-heading">
-              Fires in the Area
-            <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th></th>
+                    <th>Comments</th>
                   </tr>
                 </thead>
-                <tbody id="display-article">
-                  
+                <tbody>
                 </tbody>
               </table>
-            </div>
-        </section>
-      </div> -->
-       
-           <!--<button class="btn btn-outline-success my-2 my-sm-0" id="findFire" type="submit">
-          Search
-        </button> -->
+          </div>
 
- 
+
+        </div>
+
+        <!-- Add comments -->
+        <div class="panel panel-primary">
+          <div class ="panel-heading">
+            <h3 id="searchAFire" class="panel-title"><strong>Add Comment</strong></h3>
+            <p>Below are user's comments on fires nation wide! To add to the comment section merely type in your comment in the text box below. When done click on the submit button below. </p>
+          </div>
+          <div class="panel-body">
+            <form>
+                <div class="form-group">
+                  <label for="employee-name-input">Search</label>
+                  <input class="form-control" id="searchInput" type="text">
+                </div>
+                <div class="dropdown">
+                	<form id="myForm">
+  						<select id="selectState">
+    					<option>Choose a state</option>
+  						</select>
+					</form>
+				</div>
+                <div class="form-group">
+                  <label for="role-input">Comment</label>
+                  <input class="form-control" id="commInput" type="text">
+                </div>
+                <button class="userInput btn btn-primary" id="add-fire-btn" type="submit">Submit</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
   <!-- API link -->
   <script src="assets/javascript/fireApi.js"></script>
 

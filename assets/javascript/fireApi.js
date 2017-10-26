@@ -5,9 +5,11 @@ function fireApi(inputLocation){
 	var queryURL = "https://api.aerisapi.com/fires/within?p=" + inputLocation + "&radius=100mi&limit=10&filter=critical&client_id=38Kg3ZDxs3eiKihJ1pDYW&client_secret=Y2dpsgFp0570JXPe7Aeeam57UYVsIt0dIpa0nIEd";
 
 
-	function fireInfoObject (lat, lng) {
+	function fireInfoObject (lat, lng, name, miles) {
 		this.lat = lat;
 		this.lng = lng;
+		this.name = name;
+		this.miles = miles;
 	}
 
 
@@ -47,7 +49,7 @@ function fireApi(inputLocation){
 				userInputLocation.lng = result.response[i].relativeTo.long
 				console.log("user input location: " + userInputLocation);
 
-				var fireInfo = new fireInfoObject(result.response[i].loc.lat, result.response[i].loc.long);
+				var fireInfo = new fireInfoObject(result.response[i].loc.lat, result.response[i].loc.long, result.response[i].report.name, result.response[i].report.areaMI);
 
 				nearbyFiresArray.push(fireInfo);
 

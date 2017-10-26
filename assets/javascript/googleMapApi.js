@@ -12,25 +12,28 @@ function googleMapApi(mapCenter, fireArray) {
 
 
   for(var i = 0; i < fireArray.length; i++) {
+    
+    var infowindow = new google.maps.InfoWindow({
+      content: "<p>" + fireArray[i].name + "<br />" +"Square Miles:" + fireArray[i].miles + "<p>"
+    });
+
     var marker = new google.maps.Marker({
     position: fireArray[i],
     map: map
   });
-  }
 
+    
+    marker.infowindow = infowindow;
 
-  // var marker = new google.maps.Marker({
-  //   position: mapCenter,
-  //   map: map
-  // });
-
-  // var secondMarker = new google.maps.Marker({
-  //   position: {lat: 30.26, lng: -97.74},
-  //   map: map
-  // });
-
-  console.log("google map function has run: ");
-  console.log(mapCenter);
+    marker.addListener('click', function() {
+      return this.infowindow.open(map, this);
+  });
 
   }
 
+
+  
+
+  }
+
+  

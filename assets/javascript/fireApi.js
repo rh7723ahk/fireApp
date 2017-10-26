@@ -18,16 +18,38 @@ function fireApi(inputLocation){
 	method: "GET"
 	}).done(function(result) {
 		
+		console.log("success: " + result.success);
+		console.log(result);
+		// console.log("error code: " + result.error.code);
+		
+		//if any errors
+		if(result.error) {
+			//if success, but no fires found
+			if(result.success == true){
+				console.log("first condition fired");
+				document.getElementById("searchAFire").innerHTML = "No Fires Nearby";
+			}
+			//if invalid input/location
+			else if (result.success == false){
+				console.log("second condition fired");
+				document.getElementById("searchAFire").innerHTML = "Invalid Location";
+			}
+		}
+		
+		//if successful and fires found
+		else if (result.success == true){
+			console.log("third condition fired");
+			document.getElementById("searchAFire").innerHTML = "Fires Found";
 
-		for(var i = 0; i < result.response.length; i++){
-			
-			userInputLocation.lat = result.response[i].relativeTo.lat
-			userInputLocation.lng = result.response[i].relativeTo.long
-			console.log("user input location: " + userInputLocation);
+			for(var i = 0; i < result.response.length; i++){
 
-			var fireInfo = new fireInfoObject(result.response[i].loc.lat, result.response[i].loc.long);
+				userInputLocation.lat = result.response[i].relativeTo.lat
+				userInputLocation.lng = result.response[i].relativeTo.long
+				console.log("user input location: " + userInputLocation);
 
-			nearbyFiresArray.push(fireInfo);
+				var fireInfo = new fireInfoObject(result.response[i].loc.lat, result.response[i].loc.long);
+
+				nearbyFiresArray.push(fireInfo);
 
 			// console.log("fire info");
 			// console.log(fireInfo);
@@ -44,13 +66,18 @@ function fireApi(inputLocation){
 			// console.log("relative latitude: " + result.response[i].relativeTo.lat + "<br>");
 			// console.log("relative longitude: " + result.response[i].relativeTo.long + "<br>");
 			
-
 		}
+		// console.log("testing");
+	}
 
 		googleMapApi(userInputLocation, nearbyFiresArray);
 		console.log(nearbyFiresArray);
 
 	// create var for all things we want represented from json dump
 	});
+
 }
+
+
+
 

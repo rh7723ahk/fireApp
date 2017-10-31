@@ -28,19 +28,33 @@
 
 #selectState{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 16px;
+    padding: 2px;
     font-size: 16px;
     cursor: pointer;
 }
 
+
 .table{
 	border: 2px solid black;
 	border-collapse: collapse;
-	text-align: left;
   background-color: #f4a4a4;
 }
 
-.tr {
-  text-align: : center;
+p{
+  text-align: center;
+
 }
 
+h1{
+  text-align: center;
+  color:#b30000;
+}
+
+h2{
+  text-align: center;
+  color:#b30000;
+}
+
+footer {
+  color:#b30000;
+}

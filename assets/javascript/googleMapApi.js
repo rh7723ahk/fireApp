@@ -14,7 +14,7 @@ function googleMapApi(mapCenter, fireArray) {
   for(var i = 0; i < fireArray.length; i++) {
     
     var infowindow = new google.maps.InfoWindow({
-      content: "<p>" + fireArray[i].name + "<br />" +"Square Miles:" + fireArray[i].miles + "<p>"
+      content: "<p>" + fireArray[i].name + "<p>"
     });
 
     var marker = new google.maps.Marker({
